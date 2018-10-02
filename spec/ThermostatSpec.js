@@ -91,4 +91,24 @@ describe('Thermostat',function() {
     });
   });
 
+  describe('resetTemperature', function(){
+    it('resets temperature back to 20',function(){
+      thermostat.increaseTemperature();
+      thermostat.resetTemperature();
+      expect(thermostat.temperature).toEqual(20)
+    })
+    it('resets temperature back to 20',function(){
+      thermostat.decreaseTemperature();
+      thermostat.resetTemperature();
+      expect(thermostat.temperature).toEqual(20)
+    })
+    it('resets temperature back to 20',function(){
+      for (var i = 0; i < 10; i++) {
+        thermostat.decreaseTemperature();
+      }
+      thermostat.resetTemperature();
+      expect(thermostat.temperature).toEqual(20)
+    })
+  })
+
 })
